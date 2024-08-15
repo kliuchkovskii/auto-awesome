@@ -1,11 +1,11 @@
-package com.example.demo1;
+package com.example.pageobject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MainPage {
+public class MainPage extends BasePage{
     @FindBy(css = "a.wt-button_mode_primary")
     public WebElement seeAllToolsButton;
 
@@ -16,6 +16,7 @@ public class MainPage {
     public WebElement searchButton;
 
     public MainPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+      super(driver);
+      PageFactory.initElements(driver, this);
     }
 }
